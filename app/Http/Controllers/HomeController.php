@@ -69,7 +69,8 @@ class HomeController extends Controller {
 		->join('origin','sch_imp.id_origin','=','origin.id_origin')
 		->join('ship','sch_imp.id_ship','=','ship.id_ship')
 		->select('*')
-		->whereNull('sch_imp.ata_aiia')
+		->whereIn('sch_imp.ata_aiia',[0000-00-00])
+		->orWhere('sch_imp.ata_aiia', null)
 		->get();
 		$row_tabel2=\DB::table('sch_imp')
 		->join('shipment_name','sch_imp.id_shipment_name','=','shipment_name.id_shipment_name')
@@ -81,6 +82,7 @@ class HomeController extends Controller {
 		->join('ship','sch_imp.id_ship','=','ship.id_ship')
 		->select('*')
 		->whereNotNull('sch_imp.ata_aiia')
+		->where('sch_imp.ata_aiia','!=','0000:00:00')
 		->get();
 		$shipment_name=shipment_name::all();
 		$category=category::all();

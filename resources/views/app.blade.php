@@ -157,6 +157,10 @@
 		        }
 		    } );
 		    $('#sch_import5').DataTable( {
+		    	dom: 'Bfrtip',
+			    buttons: [
+			        'copy', 'excel', 'pdf'
+			    ],
 		    	processing: true,
 		        serverSide: true,
 		        ajax: 'http://localhost/goexim/public/data1',

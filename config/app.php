@@ -146,12 +146,9 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		Yajra\Datatables\DatatablesServiceProvider::class,
+		'Maatwebsite\Excel\ExcelServiceProvider',
 
-		/*
-		 * v1.0 by Ferry, Add customized providers
-		 */
-		'Zizaco\Entrust\EntrustServiceProvider',
-		'Illuminate\Html\HtmlServiceProvider',
+		'Collective\Html\HtmlServiceProvider',
 	],
 
 	/*
@@ -200,13 +197,11 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
-		// v1.0 by Ferry, Add entrust aliases
-		'Entrust' => 'Zizaco\Entrust\EntrustFacade',
 		'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
-		// v1.0 by Ferry, Add html aliases
-		'Form'      => 'Illuminate\Html\FormFacade',
-		'Html'      => 'Illuminate\Html\HtmlFacade',
+	    'Form' => 'Collective\Html\FormFacade',
+	    'Html' => 'Collective\Html\HtmlFacade',
 	],
 
 ];
